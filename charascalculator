@@ -1,0 +1,91 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+int main(){
+    //Variável ao qual será controlada as ações escolhidas pelo usuário
+    int retorno;
+    //Variáveis ao qual serão introduzidos os valores do usuário
+    //Result é a variável com o valor final para o usuário
+    float first_value, second_value, result;
+    
+    //Apresentação do programa ao ser executado
+    printf("Welcome to Chara's calculator");
+    printf("\nAfter the options, insert one value corresponding with one action");
+    printf("\nIt's your last calculation, enjoy now :)");
+
+    //Escolhas disponíveis para o usuário, indo de 1 a 4
+    printf("\n\n");
+    printf("1. Sum");
+    printf("\n2. Subtract");
+    printf("\n3. Multiply");
+    printf("\n4. Divide");
+
+    //Verificação da variável retorno
+    /*Enquanto o retorno for menor que 1(primeira opção) ou maior que 4(última opção)
+    o programa não seguirá com o cálculo */
+    while(retorno < 1 || retorno > 4){
+        printf("\nNow, choose your operation. You need to kill your problem: ");
+        scanf("%d",&retorno);
+        if(isprint(retorno)){
+            retorno = 0;
+            break;
+        }
+    }
+
+    //Operação de acordo com a escolha do usuário
+    /* Opção 1: Somar
+    Opção 2: Subtrair
+    Opção 3: Multiplicar
+    Opção 4: Dividir
+    */
+    switch(retorno){
+        case 1:
+            printf("\nYour way is SUM the pain of numbers");
+            printf("\nNow, insert the FIRST damage VALUE: ");
+            scanf("%f",&first_value);
+            printf("\nNice, insert the SECOND damage VALUE to kill this: ");
+            scanf("%f",&second_value);
+            result = first_value + second_value;
+            printf("It's a piece of cake, your damage is: %f",result);
+            break;
+        case 2:
+            printf("\nYour way is SUBTRACT the population of numbers");
+            printf("\nInsert the VALUE of FIRST genocide round: ");
+            scanf("%f",&first_value);
+            printf("\nGood, insert now the VALUE of SECOND round: ");
+            scanf("%f",&second_value);
+            result = first_value - second_value;
+            printf("Finished job, the result of this genocide task is: %f",result);
+            break;
+        case 3:
+            printf("\nYour way is MULTIPLY the genocide ideals");
+            printf("\nInsert the FIRST VALUE of our ideals: ");
+            scanf("%f",&first_value);
+            printf("\nGood, insert the SECOND word of Chara: ");
+            scanf("%f",&second_value);
+            result = first_value * second_value;
+            printf("You're a good user for me, take this: %f",result);
+            break;
+        case 4:
+            printf("\nYour way is DIVIDE the members of pacifists");
+            printf("\nInsert the FIRST quantity of pacifists: ");
+            scanf("%f",&first_value);
+            printf("\nWow, now, insert the quantity of members: ");
+            scanf("%f",&second_value);
+            result = first_value / second_value;
+            printf("Nice job, your value is: %f",result);
+            break;
+        default:
+            printf("...");
+            printf("\nARE YOU KIDDING ME?");         
+    }
+
+    //Quebra de linha para o system("pause")
+    printf("\n");
+
+    //Parada do sistema para que seja possível o usuário ver o valor
+    system("TIMEOUT /T 5");
+
+    return 0;
+}
